@@ -1,0 +1,53 @@
+.text-field {
+	-fx-border-color: black;
+	-fx-background-color: transparent;
+	-fx-alignment: center;
+	-fx-font: 20px System;
+	-fx-border-width: 0px 1px 0px 1px
+}
+#completed{
+	-fx-text-inner-color: gray;
+}
+.list-view{
+	-fx-background-color: transparent;
+}
+.list-cell{
+	-fx-background-insets: 0;
+	-fx-padding: 0;
+	-fx-pref-height: 50px;
+	-fx-max-height: 50px;
+}
+.list-cell:empty{
+	-fx-pref-height: 50px;
+	-fx-max-height: 50px;
+}
+#head1,#head2,#head3,#head4,#head5{
+	-fx-background-color: #cfcfcf;
+	-fx-border-color: transparent;
+}
+.text-area *.content{
+	-fx-background-color: transparent;
+}
+.text-area{
+	-fx-font-family: System;
+	-fx-text-box-border: transparent;
+}
+#timeLabel{
+	-fx-font-size: 30px;
+}
+#user_area{
+	-fx-font-size: 30px;
+}
+#dateLabel{
+	-fx-font-size: 15px;
+	-fx-text-fill: gray;
+}
+.text-area *.text{
+	-fx-text-alignment: center;
+}
+#enter_input{
+		-fx-border-width: 1px 1px 1px 1px;
+		-fx-border-color: #cfcfcf;
+		-fx-background-color: #cfcfcf;
+		-fx-border-radius: 10px;
+}

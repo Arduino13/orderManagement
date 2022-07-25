@@ -1,0 +1,59 @@
+#ifndef SEARCH_H
+#define SEARCH_H
+
+#include <QDialog>
+#include <QSignalMapper>
+#include <QRadioButton>
+#include "database_obj.h"
+#include "ui_search.h"
+
+#define BUTTON_NUM 5
+
+namespace Ui{
+    class search;
+}
+
+class search : public QDialog
+{
+
+Q_OBJECT
+
+public:
+    search(QWidget *parent=0);
+    ~search();
+
+    struct search_struct{
+        QString number;
+        QString batch;
+        State state;
+        QString user_name;
+        int number_of;
+    };
+
+private:
+    Ui::search *ui;
+    QSignalMapper *map;
+
+    enum BUTTON_T{
+        NUMBER,
+        BATCH,
+        STATE,
+        USER,
+        NUMBER_OF
+    };
+
+    QRadioButton *buttonArray[BUTTON_NUM];
+    BUTTON_T buttonArray_t[BUTTON_NUM]={NUMBER,BATCH,STATE,USER,NUMBER_OF};
+
+    void closeEvent(QCloseEvent *e);
+
+private slots:
+    void eventCatcher(int i);
+
+signals:
+    void result(search_struct);
+};
+
+Q_DECLARE_METATYPE(search::search_struct)
+
+#endif // SEARCH_H

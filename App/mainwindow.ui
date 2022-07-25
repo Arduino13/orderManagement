@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTableView" name="tableView">
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuZobrazen">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="actionU_ivatel"/>
+    <addaction name="actionZak_zky"/>
+   </widget>
+   <widget class="QMenu" name="menuHledat">
+    <property name="title">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuObnovit">
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Update</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuPokro_il">
+    <property name="title">
+     <string>Order mode</string>
+    </property>
+    <addaction name="actionPodle_id"/>
+    <addaction name="actionPodle_sla_v_kresu"/>
+   </widget>
+   <widget class="QMenu" name="menuDal">
+    <property name="title">
+     <string>Other</string>
+    </property>
+    <addaction name="actionSeznam_z_vit"/>
+    <addaction name="actionSmazat_historii"/>
+    <addaction name="actionZm_nit_heslo"/>
+   </widget>
+   <addaction name="menuZobrazen"/>
+   <addaction name="menuPokro_il"/>
+   <addaction name="menuDal"/>
+   <addaction name="menuHledat"/>
+   <addaction name="menuObnovit"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionU_ivatel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Users</string>
+   </property>
+  </action>
+  <action name="actionZak_zky">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Orders</string>
+   </property>
+  </action>
+  <action name="actionPodle_id">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>By user</string>
+   </property>
+  </action>
+  <action name="actionPodle_sla_v_kresu">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>By batch</string>
+   </property>
+  </action>
+  <action name="actionSeznam_z_vit">
+   <property name="text">
+    <string>Threads list</string>
+   </property>
+  </action>
+  <action name="actionSmazat_historii">
+   <property name="text">
+    <string>Delete history</string>
+   </property>
+  </action>
+  <action name="actionZm_nit_heslo">
+   <property name="text">
+    <string>Change password</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

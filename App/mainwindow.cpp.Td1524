@@ -1,0 +1,56 @@
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+    this->setWindowIcon(QIcon(":/new/prefix1/icon.png"));
+    this->setWindowTitle("Správa zakázek 1.0");
+
+    QMessageBox *box = DialogBoxes::InfoBox("Čekejte prosím",true);
+    box->show();
+    QApplication::processEvents(); //jinak by nevykreslilo message box
+
+    users=db.loadListUser();
+
+    main_model_item *myModel = new main_model_item(this);
+    ui->tableView->setModel(&*myModel);
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableView->verticalHeader()->hide();
+    ui->tableView->setAlternatingRowColors(true);
+    ui->tableView->setStyleSheet("QTableView::item{border: 1px solid white; border-bottom: 1px solid rgb(51, 153, 255); background-color: none;} "
+                                 "QTableView{gridline-color: white;} QHeaderView::section{ background-color: rgb(51, 153, 255); border-right: 1px solid white;} QHeaderView{border: 1px solid white;}"
+                                 "alternate-background-color: rgb(255,255,255);background-color: gray;");
+
+    connect(ui->tableView->selectionModel(),SIGNAL(selectionChanged(QItemSelection,QItemSelection)),this,SLOT(choose(QItemSelection,QItemSelection)));
+    delete box;
+}
+
+void MainWindow::choose(const QItemSelection &, const QItemSelection &){
+   if(!running){
+        running=true;
+        int index = ui->tableView->selectionModel()->currentIndex().row();
+        QModelIndex index_m = ui->tableView->currentIndex();
+        index_m=index_m.sibling(index,static_cast<int>(main_model_item::USER));
+
+        QString userName = ui->tableView->model()->data(index_m).toString();
+        qDebug()<<userName;
+
+        ui->tableView->clearSelection();
+        running=false;
+   }
+}
+
+void MainWindow::resizeEvent(QResizeEvent *e){
+    for(int i=0;i<COLUM_NUM;i++){
+        ui->tableView->setColumnWidth(i,this->width()/COLUM_NUM);
+    }
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui->tableView->model();
+    delete ui;
+}

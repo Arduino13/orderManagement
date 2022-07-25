@@ -15,7 +15,7 @@ in progress, stopped (if problem occurres), paused (for example he has a break) 
 |:--:|
 |Changing state of and item, worker can select state with 1 to 4 number keys and closes the dialog with ctrl + c|
 
-Application on desktop computer within the same network is than for displaying list of orders and their history of states, with their controls. 
+Application ,which uses Qt framework, on computer within the same network is than for displaying list of orders and their history of states, with their controls. 
 
 ![Screenshot from 2022-07-25 21-24-18](https://user-images.githubusercontent.com/26491801/180859376-0db372c1-10f0-4ccb-88e3-4408ca6a022b.png)
 ![Screenshot from 2022-07-25 21-24-28](https://user-images.githubusercontent.com/26491801/180859390-79a39bea-938f-447e-947a-57915194e248.png)

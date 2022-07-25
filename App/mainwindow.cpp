@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->setupUi(this);
     this->setWindowIcon(QIcon(":/new/prefix1/icon.png"));
-    this->setWindowTitle("Orders manager 1.0 pre-alpha");
+    this->setWindowTitle("Order management 1.0 pre-alpha");
 
     users=db.loadListUser();
     items=new QVector<Item*>();

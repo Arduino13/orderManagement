@@ -63,9 +63,9 @@ private:
 	//see line no. 409
     typedef std::function<QVector<Item*>* (const QString,QVector<User*>*,Item *item,int,int)> getter_f;
 
-    QString name_db = "koukal";
-    QString name = "root";
-    QString pass = "PHP5mysql-SPRAVA";
+    QString name_db = "DB NAME";
+    QString name = "DB USER";
+    QString pass = "DB PASSWORD";
 
     enum type{
         USER=1,
